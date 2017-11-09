@@ -77,6 +77,10 @@ function error (err, req, res, next) {
     var statusCode = err.statusCode || 500
     message = (err.statusCode && err.message) || 'Internal Server Error'
 
+    /* REMOVE THIS LINE */
+    console.error(err)
+    /* REMOVE THIS LINE */
+
     if (req.app.get('env') === 'development') {
       message += '<br><br>' + errorDescription
     }
